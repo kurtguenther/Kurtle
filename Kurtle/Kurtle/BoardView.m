@@ -69,6 +69,11 @@
     {
         case UIGestureRecognizerStateBegan:
             NSLog(@"------------ start ---------------");
+            if(!tile.isTouched)
+            {
+                [tile setTouched:YES];
+            }
+
             break;
         case UIGestureRecognizerStateChanged:
             if(!tile.isTouched)
@@ -88,6 +93,21 @@
             break;
     }
     
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan)
+    {
+        CGPoint p = [touch locationInView:self];
+        TileView* tile = [self convertPointToTile:p];
+        if(!tile.isTouched)
+        {
+            [tile setTouched:YES];
+        }
+    }
+
 }
 
 - (void) foldOnTiles:(void (^)(TileView* tile)) function
