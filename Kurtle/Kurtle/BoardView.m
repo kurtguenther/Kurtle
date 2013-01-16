@@ -16,6 +16,9 @@
 #define TILE_SPACER 7
 #define TOUCH_EPSILON 7
 
+
+@synthesize lastTile = _lastTile;
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -34,14 +37,16 @@
                   [NSArray arrayWithObjects: self.tile20, self.tile21,self.tile22, self.tile23, nil],
                   [NSArray arrayWithObjects: self.tile30, self.tile31,self.tile32, self.tile33, nil],
                   nil];
+    
+    [self foldOnTiles:^(int x, int y, TileView *tile) {
+        tile.location = CGPointMake(x, y);
+    }];
 }
 
 - (TileView*) convertPointToTile:(CGPoint) point
 {
     TileView* retVal = nil;
     
-//    int x = floor((point.y - TILE_SPACER)/ (TILE_SIZE + TILE_SPACER));
-//    int y = floor((point.x - TILE_SPACER) / (TILE_SIZE + TILE_SPACER));
     int x = floor(point.y / (TILE_SIZE + TILE_SPACER));
     int y = floor(point.x / (TILE_SIZE + TILE_SPACER));
     
@@ -61,6 +66,20 @@
     return retVal;
 }
 
+- (BOOL) isValidMove:(TileView*)tile
+{
+    NSLog(@"last tile: %@", self.lastTile.letter);
+    if(self.lastTile == nil)
+    {
+        return YES;
+    }
+    else
+    {
+        return abs(tile.location.x - self.lastTile.location.x) <= 1 &&
+            abs(tile.location.y - self.lastTile.location.y) <= 1;
+    }
+}
+
 - (IBAction) dragGesture:(UIPanGestureRecognizer*) sender
 {
     CGPoint p = [sender locationInView:self];
@@ -72,22 +91,30 @@
             if(!tile.isTouched)
             {
                 [tile setTouched:YES];
+                self.lastTile = tile;
             }
 
             break;
         case UIGestureRecognizerStateChanged:
             if(!tile.isTouched)
             {
-                [tile setTouched:YES];
+                if([self isValidMove:tile])
+                {
+                    [tile setTouched:YES];
+                    self.lastTile = tile;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kMoveLetterMessage object:tile];
+                }
             }
-
             break;
         case UIGestureRecognizerStateEnded:
             NSLog(@"------------ stop! ---------------");
+            self.lastTile = nil;
             //entered a word
-            [self foldOnTiles:^(TileView *tile) {
+            [self foldOnTiles:^(int x, int y, TileView *tile) {
                 [tile setTouched: NO];
             }];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kEndWordMessage object:nil];
             break;
         default:
             break;
@@ -105,12 +132,14 @@
         if(!tile.isTouched)
         {
             [tile setTouched:YES];
+            self.lastTile = tile;
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMoveLetterMessage object:tile];
         }
     }
 
 }
 
-- (void) foldOnTiles:(void (^)(TileView* tile)) function
+- (void) foldOnTiles:(void (^)(int x, int y, TileView* tile)) function
 {
 
     for(int i = 0; i < X_TILE_COUNT; i++)
@@ -118,7 +147,7 @@
         for(int j = 0; j < Y_TILE_COUNT; j++)
         {
             TileView* tv = self.tiles[i][j];
-            function(tv);
+            function(j, i, tv);  // makes sense on 2d array
         }
     }
 }

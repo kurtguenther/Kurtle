@@ -14,5 +14,6 @@
 
 
 @property (retain, nonatomic) IBOutlet BoardView *boardView;
+@property (retain, nonatomic) IBOutlet UILabel* wordLabel;
 
 @end

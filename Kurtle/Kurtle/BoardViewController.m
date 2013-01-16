@@ -30,10 +30,24 @@
     [super viewDidLoad];
     
 
-    [self.boardView foldOnTiles:^(TileView *tile) {
+    [self.boardView foldOnTiles:^(int x, int y, TileView *tile) {
         [tile setLetter: [self returnRandomLetter]];
     }];
     
+    //Start listening to board moves
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(letterAdded:) name:kMoveLetterMessage object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wordAdded:) name:kEndWordMessage object:nil];
+}
+
+- (void) letterAdded:(NSNotification*) sender
+{
+    TileView* obj = sender.object;
+    self.wordLabel.text = [NSString stringWithFormat:@"%@%@", self.wordLabel.text, obj.letter];
+}
+
+- (void) wordAdded:(id) sender
+{
+    self.wordLabel.text = @"";
 }
 
      

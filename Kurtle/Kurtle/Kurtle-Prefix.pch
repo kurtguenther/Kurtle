@@ -14,4 +14,7 @@
 
     #define X_TILE_COUNT 4
     #define Y_TILE_COUNT 4
+
+    #define kMoveLetterMessage @"kMoveLetterMessage"
+    #define kEndWordMessage @"kEndWordMessage"
 #endif

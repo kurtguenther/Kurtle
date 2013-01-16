@@ -31,9 +31,9 @@
 
 @property (retain, nonatomic) NSArray* tiles;
 
-@property CGPoint start;
+@property (retain, nonatomic) TileView* lastTile;
 
 - (IBAction) dragGesture:(UIPanGestureRecognizer*) sender;
-- (void) foldOnTiles:(void (^)(TileView* tile)) function;
+- (void) foldOnTiles:(void (^)(int x, int y, TileView* tile)) function;
 
 @end

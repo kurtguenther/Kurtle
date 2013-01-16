@@ -25,6 +25,7 @@
         self.letterLabel = [[UILabel alloc] initWithFrame:CGRectMake(BORDER, BORDER, self.frame.size.width - 2 * BORDER, self.frame.size.height - 2 * BORDER)];
         self.letterLabel.backgroundColor = [UIColor clearColor];
         self.letterLabel.textAlignment = NSTextAlignmentCenter;
+        
         [self addSubview:self.letterLabel];
     }
     return self;
@@ -32,7 +33,7 @@
 
 - (void)setLetter:(NSString *)letter
 {
-    _letter  = letter;
+    _letter  = [letter retain];
     self.letterLabel.text = _letter;
 }
 

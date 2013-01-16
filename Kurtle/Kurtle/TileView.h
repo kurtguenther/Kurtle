@@ -12,6 +12,8 @@
 
 @property (retain, nonatomic) NSString* letter;
 @property (retain, nonatomic) UILabel *letterLabel;
+
+@property CGPoint location;
 @property BOOL isTouched;
 
 - (void) setTouched: (BOOL) touched;
