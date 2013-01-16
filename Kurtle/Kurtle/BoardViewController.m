@@ -49,15 +49,24 @@
 {
     self.wordLabel.text = @"";
 }
-
      
 -(NSString*) returnRandomLetter
 {
-    //Be smarter;
+    //Be smarter.
     
-    NSString *alphabet  = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";    
-    int index = arc4random() % 26;
-    return [alphabet substringWithRange:NSMakeRange(index, 1)];
+    // Straight 1 in 26.
+    
+    //    NSString *alphabet  = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //    int index = arc4random() % 26;
+    //    return [alphabet substringWithRange:NSMakeRange(index, 1)];
+   
+    //Ok, use Boggle frequency: http://boardgamegeek.com/thread/300883/letter-distribution
+    NSString *boggleAlphabet = @"EEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTAAAAAAAAAAAARRRRRRRRRRRRIIIIIIIIIIINNNNNNNNNNNOOOOOOOOOOOSSSSSSSSSDDDDDDCCCCCHHHHHFFFFLLLLLMMMMPPPPUUUUGGGYYYWWBJKVQXZ";
+    int index = arc4random() % boggleAlphabet.length;
+    
+    NSString* letter = [boggleAlphabet substringWithRange:NSMakeRange(index, 1)];
+    
+    return [letter isEqualToString:@"Q"] ? @"Qu" : letter;
 }
 
 @end
