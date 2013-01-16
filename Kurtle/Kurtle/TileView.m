@@ -43,11 +43,13 @@
     
     if(value)
     {
-        self.transform = CGAffineTransformMakeScale(1.2, 1.2);
+        self.transform = CGAffineTransformMakeScale(1.11, 1.11);
+        self.backgroundColor = [UIColor colorWithRed:215.0/255.0 green:215.0/255.0 blue:1.0 alpha:1.0];
     }
     else
     {
         self.transform = CGAffineTransformIdentity;
+        self.backgroundColor = [UIColor lightGrayColor];
     }
 }
 
