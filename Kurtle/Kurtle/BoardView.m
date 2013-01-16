@@ -88,7 +88,7 @@
     {
         case UIGestureRecognizerStateBegan:
             NSLog(@"------------ start ---------------");
-            if(!tile.isTouched)
+            if(tile && !tile.isTouched)
             {
                 [tile setTouched:YES];
                 self.lastTile = tile;
@@ -96,7 +96,7 @@
 
             break;
         case UIGestureRecognizerStateChanged:
-            if(!tile.isTouched)
+            if(tile && !tile.isTouched)
             {
                 if([self isValidMove:tile])
                 {
@@ -129,7 +129,7 @@
     {
         CGPoint p = [touch locationInView:self];
         TileView* tile = [self convertPointToTile:p];
-        if(!tile.isTouched)
+        if(tile && !tile.isTouched)
         {
             [tile setTouched:YES];
             self.lastTile = tile;
