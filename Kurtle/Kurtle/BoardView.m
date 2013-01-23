@@ -14,16 +14,19 @@
 
 #define TILE_SIZE 60
 #define TILE_SPACER 7
-#define TOUCH_EPSILON 7
+#define TOUCH_EPSILON 6
 
 
 @synthesize lastTile = _lastTile;
+
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
+        self.selectedTiles = [NSMutableArray array];
     }
     return self;
 }
@@ -43,7 +46,12 @@
     }];
 }
 
-- (TileView*) convertPointToTile:(CGPoint) point
+- (TileView *)lastTile
+{
+    return [self.selectedTiles lastObject];
+}
+
+- (TileView*) convertPointToTile:(CGPoint) point useInset:(BOOL)useInset
 {
     TileView* retVal = nil;
     
@@ -56,8 +64,10 @@
         int sq_x = (int) point.y % (TILE_SIZE + TILE_SPACER);
         int sq_y = (int) point.x % (TILE_SIZE + TILE_SPACER);
         
-        if(sq_x > TILE_SPACER + TOUCH_EPSILON && sq_x < TILE_SIZE - TOUCH_EPSILON &&
-           sq_y > TILE_SPACER + TOUCH_EPSILON && sq_y < TILE_SIZE - TOUCH_EPSILON)
+        float inset = useInset ? TOUCH_EPSILON : 0;
+        
+        if(sq_x > TILE_SPACER + inset && sq_x < TILE_SIZE - inset &&
+           sq_y > TILE_SPACER + inset && sq_y < TILE_SIZE - inset)
         {
             retVal = self.tiles[x][y];
         }
@@ -82,16 +92,21 @@
 
 - (IBAction) dragGesture:(UIPanGestureRecognizer*) sender
 {
+    //Don't do anything if we are disabled.
+    if(!self.isUserInteractionEnabled)
+    {
+        return;
+    }
+    
     CGPoint p = [sender locationInView:self];
-    TileView* tile = [self convertPointToTile:p];    
+    TileView* tile = [self convertPointToTile:p useInset:YES];
     switch(sender.state)
     {
         case UIGestureRecognizerStateBegan:
             NSLog(@"------------ start ---------------");
             if(tile && !tile.isTouched)
             {
-                [tile setTouched:YES];
-                self.lastTile = tile;
+                [self selectTile:tile];
             }
 
             break;
@@ -100,21 +115,14 @@
             {
                 if([self isValidMove:tile])
                 {
-                    [tile setTouched:YES];
-                    self.lastTile = tile;
-                    [[NSNotificationCenter defaultCenter] postNotificationName:kMoveLetterMessage object:tile];
+                    [self selectTile:tile];
                 }
             }
             break;
         case UIGestureRecognizerStateEnded:
             NSLog(@"------------ stop! ---------------");
-            self.lastTile = nil;
-            //entered a word
-            [self foldOnTiles:^(int x, int y, TileView *tile) {
-                [tile setTouched: NO];
-            }];
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:kEndWordMessage object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kEndWordMessage object:self.selectedTiles];
+            [self clearBoard];            
             break;
         default:
             break;
@@ -124,19 +132,47 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    //Don't do anything if we are disabled.
+    if(!self.isUserInteractionEnabled)
+    {
+        return;
+    }
+    
     UITouch *touch = [touches anyObject];
     if(touch.phase == UITouchPhaseBegan)
     {
-        CGPoint p = [touch locationInView:self];
-        TileView* tile = [self convertPointToTile:p];
-        if(tile && !tile.isTouched)
+        if(self.lastTile == nil)
         {
-            [tile setTouched:YES];
-            self.lastTile = tile;
-            [[NSNotificationCenter defaultCenter] postNotificationName:kMoveLetterMessage object:tile];
+            CGPoint p = [touch locationInView:self];
+            TileView* tile = [self convertPointToTile:p useInset:NO];
+            if(tile && !tile.isTouched)
+            {
+                [self selectTile:tile];
+            }
+        }
+        else
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kEndWordMessage object:self.selectedTiles];
+            [self clearBoard];
         }
     }
 
+}
+
+- (void) selectTile:(TileView*) tile
+{
+    [tile setTouched:YES];
+    [self.selectedTiles addObject:tile];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMoveLetterMessage object:tile];
+}
+
+- (void) clearBoard
+{
+    self.selectedTiles = [NSMutableArray array];
+    //entered a word
+    [self foldOnTiles:^(int x, int y, TileView *tile) {
+        [tile setTouched: NO];
+    }];
 }
 
 - (void) foldOnTiles:(void (^)(int x, int y, TileView* tile)) function

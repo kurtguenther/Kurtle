@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5A928716AF892E00CB3462 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5A928616AF892E00CB3462 /* HomeViewController.m */; };
+		0F5A928A16AF8A9300CB3462 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5A928916AF8A9300CB3462 /* DataService.m */; };
+		0FC6F5B316AF8D9300257FD4 /* Kurtle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6F5B116AF8D9300257FD4 /* Kurtle.xcdatamodeld */; };
+		0FC6F5B616AF8DF500257FD4 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6F5B516AF8DF500257FD4 /* Game.m */; };
+		0FC6F5B816AF8E3100257FD4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC6F5B716AF8E3100257FD4 /* CoreData.framework */; };
+		0FC6F5BA16AFA07400257FD4 /* libLexicontext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC6F5B916AFA07400257FD4 /* libLexicontext.a */; };
+		0FC6F5BE16AFA24C00257FD4 /* LexicontextAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FC6F5BD16AFA24C00257FD4 /* LexicontextAssets.bundle */; };
 		0FFE6C9B16A63FDE0065BC9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFE6C9A16A63FDE0065BC9F /* UIKit.framework */; };
 		0FFE6C9D16A63FDE0065BC9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFE6C9C16A63FDE0065BC9F /* Foundation.framework */; };
 		0FFE6C9F16A63FDE0065BC9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFE6C9E16A63FDE0065BC9F /* CoreGraphics.framework */; };
@@ -23,6 +30,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F5A928516AF892E00CB3462 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0F5A928616AF892E00CB3462 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		0F5A928816AF8A9300CB3462 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		0F5A928916AF8A9300CB3462 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		0FC6F5B216AF8D9300257FD4 /* Kurtle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kurtle.xcdatamodel; sourceTree = "<group>"; };
+		0FC6F5B416AF8DF500257FD4 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		0FC6F5B516AF8DF500257FD4 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		0FC6F5B716AF8E3100257FD4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0FC6F5B916AFA07400257FD4 /* libLexicontext.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLexicontext.a; path = ../libLexicontext.a; sourceTree = "<group>"; };
+		0FC6F5BB16AFA08600257FD4 /* Lexicontext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lexicontext.h; path = ../Lexicontext.h; sourceTree = "<group>"; };
+		0FC6F5BD16AFA24C00257FD4 /* LexicontextAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LexicontextAssets.bundle; sourceTree = "<group>"; };
 		0FFE6C9616A63FDE0065BC9F /* Kurtle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurtle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFE6C9A16A63FDE0065BC9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0FFE6C9C16A63FDE0065BC9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,12 +55,12 @@
 		0FFE6CAE16A63FDE0065BC9F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0FFE6CB016A63FDE0065BC9F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0FFE6CB716A63FFB0065BC9F /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
-		0FFE6CB916A642190065BC9F /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
-		0FFE6CBA16A642190065BC9F /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
-		0FFE6CBC16A6438A0065BC9F /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardViewController.h; sourceTree = "<group>"; };
-		0FFE6CBD16A6438A0065BC9F /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
-		0FFE6CBF16A645840065BC9F /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardView.h; sourceTree = "<group>"; };
-		0FFE6CC016A645840065BC9F /* BoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardView.m; sourceTree = "<group>"; };
+		0FFE6CB916A642190065BC9F /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TileView.h; path = ../TileView.h; sourceTree = "<group>"; };
+		0FFE6CBA16A642190065BC9F /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TileView.m; path = ../TileView.m; sourceTree = "<group>"; };
+		0FFE6CBC16A6438A0065BC9F /* BoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardViewController.h; path = ../BoardViewController.h; sourceTree = "<group>"; };
+		0FFE6CBD16A6438A0065BC9F /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardViewController.m; path = ../BoardViewController.m; sourceTree = "<group>"; };
+		0FFE6CBF16A645840065BC9F /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardView.h; path = ../BoardView.h; sourceTree = "<group>"; };
+		0FFE6CC016A645840065BC9F /* BoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardView.m; path = ../BoardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,15 +68,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC6F5B816AF8E3100257FD4 /* CoreData.framework in Frameworks */,
 				0FFE6C9B16A63FDE0065BC9F /* UIKit.framework in Frameworks */,
 				0FFE6C9D16A63FDE0065BC9F /* Foundation.framework in Frameworks */,
 				0FFE6C9F16A63FDE0065BC9F /* CoreGraphics.framework in Frameworks */,
+				0FC6F5BA16AFA07400257FD4 /* libLexicontext.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F5A927D16AF870E00CB3462 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0F5A928816AF8A9300CB3462 /* DataService.h */,
+				0F5A928916AF8A9300CB3462 /* DataService.m */,
+				0FC6F5B116AF8D9300257FD4 /* Kurtle.xcdatamodeld */,
+				0FC6F5B416AF8DF500257FD4 /* Game.h */,
+				0FC6F5B516AF8DF500257FD4 /* Game.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0F5A927F16AF872F00CB3462 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0FFE6CB916A642190065BC9F /* TileView.h */,
+				0FFE6CBA16A642190065BC9F /* TileView.m */,
+				0FFE6CBF16A645840065BC9F /* BoardView.h */,
+				0FFE6CC016A645840065BC9F /* BoardView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0F5A928116AF874B00CB3462 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FFE6CBC16A6438A0065BC9F /* BoardViewController.h */,
+				0FFE6CBD16A6438A0065BC9F /* BoardViewController.m */,
+				0F5A928516AF892E00CB3462 /* HomeViewController.h */,
+				0F5A928616AF892E00CB3462 /* HomeViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0FC6F5BC16AFA21D00257FD4 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				0FC6F5BD16AFA24C00257FD4 /* LexicontextAssets.bundle */,
+				0FC6F5BB16AFA08600257FD4 /* Lexicontext.h */,
+				0FC6F5B916AFA07400257FD4 /* libLexicontext.a */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
 		0FFE6C8B16A63FDE0065BC9F = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +143,8 @@
 		0FFE6C9916A63FDE0065BC9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FC6F5BC16AFA21D00257FD4 /* Dictionary */,
+				0FC6F5B716AF8E3100257FD4 /* CoreData.framework */,
 				0FFE6C9A16A63FDE0065BC9F /* UIKit.framework */,
 				0FFE6C9C16A63FDE0065BC9F /* Foundation.framework */,
 				0FFE6C9E16A63FDE0065BC9F /* CoreGraphics.framework */,
@@ -89,16 +155,13 @@
 		0FFE6CA016A63FDE0065BC9F /* Kurtle */ = {
 			isa = PBXGroup;
 			children = (
+				0F5A928116AF874B00CB3462 /* Controllers */,
+				0F5A927F16AF872F00CB3462 /* Views */,
+				0F5A927D16AF870E00CB3462 /* Data */,
 				0FFE6CA916A63FDE0065BC9F /* AppDelegate.h */,
 				0FFE6CAA16A63FDE0065BC9F /* AppDelegate.m */,
 				0FFE6CA116A63FDE0065BC9F /* Supporting Files */,
 				0FFE6CB716A63FFB0065BC9F /* iPhoneStoryboard.storyboard */,
-				0FFE6CB916A642190065BC9F /* TileView.h */,
-				0FFE6CBA16A642190065BC9F /* TileView.m */,
-				0FFE6CBC16A6438A0065BC9F /* BoardViewController.h */,
-				0FFE6CBD16A6438A0065BC9F /* BoardViewController.m */,
-				0FFE6CBF16A645840065BC9F /* BoardView.h */,
-				0FFE6CC016A645840065BC9F /* BoardView.m */,
 			);
 			path = Kurtle;
 			sourceTree = "<group>";
@@ -173,6 +236,7 @@
 				0FFE6CAF16A63FDE0065BC9F /* Default@2x.png in Resources */,
 				0FFE6CB116A63FDE0065BC9F /* Default-568h@2x.png in Resources */,
 				0FFE6CB816A63FFB0065BC9F /* iPhoneStoryboard.storyboard in Resources */,
+				0FC6F5BE16AFA24C00257FD4 /* LexicontextAssets.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +252,10 @@
 				0FFE6CBB16A642190065BC9F /* TileView.m in Sources */,
 				0FFE6CBE16A6438A0065BC9F /* BoardViewController.m in Sources */,
 				0FFE6CC116A645840065BC9F /* BoardView.m in Sources */,
+				0F5A928716AF892E00CB3462 /* HomeViewController.m in Sources */,
+				0F5A928A16AF8A9300CB3462 /* DataService.m in Sources */,
+				0FC6F5B316AF8D9300257FD4 /* Kurtle.xcdatamodeld in Sources */,
+				0FC6F5B616AF8DF500257FD4 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +329,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kurtle/Kurtle-Prefix.pch";
 				INFOPLIST_FILE = "Kurtle/Kurtle-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -272,6 +344,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kurtle/Kurtle-Prefix.pch";
 				INFOPLIST_FILE = "Kurtle/Kurtle-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -296,8 +372,22 @@
 				0FFE6CB616A63FDE0065BC9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0FC6F5B116AF8D9300257FD4 /* Kurtle.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0FC6F5B216AF8D9300257FD4 /* Kurtle.xcdatamodel */,
+			);
+			currentVersion = 0FC6F5B216AF8D9300257FD4 /* Kurtle.xcdatamodel */;
+			path = Kurtle.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0FFE6C8D16A63FDE0065BC9F /* Project object */;
 }

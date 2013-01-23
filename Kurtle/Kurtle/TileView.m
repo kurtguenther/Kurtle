@@ -15,7 +15,7 @@
 @synthesize isTouched = _isTouched;
 
 #define BORDER 5
-
+      
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];

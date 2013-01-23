@@ -11,10 +11,14 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
 
     #define X_TILE_COUNT 4
     #define Y_TILE_COUNT 4
 
     #define kMoveLetterMessage @"kMoveLetterMessage"
     #define kEndWordMessage @"kEndWordMessage"
+
+    #import "AppDelegate.h"
+    #import "DataService.h"
 #endif

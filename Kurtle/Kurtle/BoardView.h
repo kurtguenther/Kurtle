@@ -31,7 +31,8 @@
 
 @property (retain, nonatomic) NSArray* tiles;
 
-@property (retain, nonatomic) TileView* lastTile;
+@property (retain, nonatomic) NSMutableArray* selectedTiles;
+@property (readonly) TileView* lastTile;
 
 - (IBAction) dragGesture:(UIPanGestureRecognizer*) sender;
 - (void) foldOnTiles:(void (^)(int x, int y, TileView* tile)) function;
