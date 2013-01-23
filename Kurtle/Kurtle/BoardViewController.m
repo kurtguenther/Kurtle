@@ -54,6 +54,14 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wordAdded:) name:kEndWordMessage object:nil];
 }
 
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        //stops the update timer (which removes a hidden reference).
+        self.state = kEnded;
+    }
+    [super viewWillDisappear:animated];
+}
+
 - (NSString*) formatForTime:(float) timeInSeconds
 {
     int mins = floor(timeInSeconds / 60.0);
@@ -187,6 +195,12 @@
     NSString* letter = [boggleAlphabet substringWithRange:NSMakeRange(index, 1)];
     
     return [letter isEqualToString:@"Q"] ? @"Qu" : letter;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 @end
