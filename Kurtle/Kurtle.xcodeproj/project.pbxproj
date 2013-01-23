@@ -12,8 +12,8 @@
 		0FC6F5B316AF8D9300257FD4 /* Kurtle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6F5B116AF8D9300257FD4 /* Kurtle.xcdatamodeld */; };
 		0FC6F5B616AF8DF500257FD4 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6F5B516AF8DF500257FD4 /* Game.m */; };
 		0FC6F5B816AF8E3100257FD4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC6F5B716AF8E3100257FD4 /* CoreData.framework */; };
-		0FC6F5BA16AFA07400257FD4 /* libLexicontext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC6F5B916AFA07400257FD4 /* libLexicontext.a */; };
 		0FC6F5BE16AFA24C00257FD4 /* LexicontextAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0FC6F5BD16AFA24C00257FD4 /* LexicontextAssets.bundle */; };
+		0FC6F5C116B0331300257FD4 /* libLexicontext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC6F5C016B0331300257FD4 /* libLexicontext.a */; };
 		0FFE6C9B16A63FDE0065BC9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFE6C9A16A63FDE0065BC9F /* UIKit.framework */; };
 		0FFE6C9D16A63FDE0065BC9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFE6C9C16A63FDE0065BC9F /* Foundation.framework */; };
 		0FFE6C9F16A63FDE0065BC9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFE6C9E16A63FDE0065BC9F /* CoreGraphics.framework */; };
@@ -38,9 +38,9 @@
 		0FC6F5B416AF8DF500257FD4 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0FC6F5B516AF8DF500257FD4 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		0FC6F5B716AF8E3100257FD4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		0FC6F5B916AFA07400257FD4 /* libLexicontext.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLexicontext.a; path = ../libLexicontext.a; sourceTree = "<group>"; };
-		0FC6F5BB16AFA08600257FD4 /* Lexicontext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lexicontext.h; path = ../Lexicontext.h; sourceTree = "<group>"; };
 		0FC6F5BD16AFA24C00257FD4 /* LexicontextAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LexicontextAssets.bundle; sourceTree = "<group>"; };
+		0FC6F5BF16B0331300257FD4 /* Lexicontext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lexicontext.h; sourceTree = "<group>"; };
+		0FC6F5C016B0331300257FD4 /* libLexicontext.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLexicontext.a; sourceTree = "<group>"; };
 		0FFE6C9616A63FDE0065BC9F /* Kurtle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurtle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFE6C9A16A63FDE0065BC9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0FFE6C9C16A63FDE0065BC9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,7 +72,7 @@
 				0FFE6C9B16A63FDE0065BC9F /* UIKit.framework in Frameworks */,
 				0FFE6C9D16A63FDE0065BC9F /* Foundation.framework in Frameworks */,
 				0FFE6C9F16A63FDE0065BC9F /* CoreGraphics.framework in Frameworks */,
-				0FC6F5BA16AFA07400257FD4 /* libLexicontext.a in Frameworks */,
+				0FC6F5C116B0331300257FD4 /* libLexicontext.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,9 +116,9 @@
 		0FC6F5BC16AFA21D00257FD4 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				0FC6F5BF16B0331300257FD4 /* Lexicontext.h */,
+				0FC6F5C016B0331300257FD4 /* libLexicontext.a */,
 				0FC6F5BD16AFA24C00257FD4 /* LexicontextAssets.bundle */,
-				0FC6F5BB16AFA08600257FD4 /* Lexicontext.h */,
-				0FC6F5B916AFA07400257FD4 /* libLexicontext.a */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -332,6 +332,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Dictionary\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -347,6 +348,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Dictionary\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

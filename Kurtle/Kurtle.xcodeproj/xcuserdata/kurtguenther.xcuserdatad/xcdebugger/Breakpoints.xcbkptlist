@@ -138,33 +138,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kurtle/BoardViewController.m"
-         timestampString = "380610287.196996"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
-         landmarkName = "-letterAdded:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Kurtle/BoardViewController.m"
-         timestampString = "380610287.196996"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "137"
-         endingLineNumber = "137"
-         landmarkName = "-wordAdded:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Kurtle/BoardViewController.m"
-         timestampString = "380610287.196996"
+         timestampString = "380646242.294092"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "122"
@@ -177,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kurtle/BoardViewController.m"
-         timestampString = "380610287.196996"
+         timestampString = "380646242.294092"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "-wordAdded:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +164,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kurtle/BoardViewController.m"
-         timestampString = "380610287.196996"
+         timestampString = "380646242.294092"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "163"
-         endingLineNumber = "163"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
+         landmarkName = "-letterAdded:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Kurtle/BoardViewController.m"
+         timestampString = "380646242.294092"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "131"
+         endingLineNumber = "131"
+         landmarkName = "-wordAdded:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Kurtle/BoardViewController.m"
+         timestampString = "380646242.294092"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "164"
+         endingLineNumber = "164"
          landmarkName = "-isValidWord:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Kurtle/BoardViewController.m"
-         timestampString = "380610287.196996"
+         timestampString = "380646242.294092"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202"
+         startingLineNumber = "203"
+         endingLineNumber = "203"
          landmarkName = "-dealloc"
          landmarkType = "5">
       </FileBreakpoint>
